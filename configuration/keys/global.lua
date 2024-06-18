@@ -111,6 +111,13 @@ globalKeys = gears.table.join(
     {description = "volume up", group = "launcher"}),
   awful.key({}, "XF86AudioLowerVolume", function() awful.spawn(apps.volume_down) end,
     {description = "volume down", group = "launcher"}),
+  -- player controls
+  awful.key({modkey,    "Shift"}, "F7", function() awful.spawn("mpc prev") end,
+    {description = "volume down", group = "launcher"}),
+  awful.key({modkey,    "Shift"}, "F8", function() awful.spawn("mpc toggle") end,
+    {description = "volume down", group = "launcher"}),
+  awful.key({modkey,    "Shift"}, "F9", function() awful.spawn("mpc next") end,
+    {description = "volume down", group = "launcher"}),
   -- screen recording and screenshots
   awful.key({       "Shift"     }, "XF86AudioMute", function() awful.spawn(apps.screenshot) end,
     {description = "take screenshot", group = "launcher"}),

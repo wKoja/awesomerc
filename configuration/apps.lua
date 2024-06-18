@@ -64,7 +64,7 @@ apps = {
 	-- editor_cmd = terminal .. " -e " .. editor,
 
 	-- Your default file explorer
-	explorer = "yazi",
+	explorer = "lfub",
 
 	browser = "brave",
 	sysact = "sysact",
