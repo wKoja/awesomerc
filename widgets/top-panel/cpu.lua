@@ -9,3 +9,9 @@ cpu = lain.widget.cpu {
 		widget:set_markup(markup.fontfg(beautiful.font, beautiful.yellow, "CPU " .. cpu_now.usage .. "%"))
 	end,
 }
+
+cpu_coretemp = lain.widget.temp({
+	settings = function ()
+		widget:set_markup(markup.fontfg(beautiful.font, beautiful.yellow, " " .. coretemp_now .. "°C "))
+	end
+})

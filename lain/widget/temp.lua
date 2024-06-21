@@ -5,41 +5,38 @@
 
 --]]
 
-local helpers  = require("lain.helpers")
-local wibox    = require("wibox")
-local tonumber = tonumber
+local helpers = require("lain.helpers")
+local wibox = require("wibox")
 
 -- {thermal,core} temperature info
 -- lain.widget.temp
 
 local function factory(args)
-    args           = args or {}
+    args = args or {}
 
-    local temp     = { widget = args.widget or wibox.widget.textbox() }
-    local timeout  = args.timeout or 30
-    local tempfile = args.tempfile or "/sys/devices/virtual/thermal/thermal_zone0/temp"
-    local format   = args.format or "%.1f"
+    local temp = { widget = args.widget or wibox.widget.textbox() }
+    local timeout = args.timeout or 30
     local settings = args.settings or function() end
 
     function temp.update()
-        helpers.async({"find", "/sys/devices", "-type", "f", "-name", "*temp*"}, function(f)
-            temp_now = {}
-            local temp_fl, temp_value
-            for t in f:gmatch("[^\n]+") do
-                temp_fl = helpers.first_line(t)
-                if temp_fl then
-                    temp_value = tonumber(temp_fl)
-                    temp_now[t] = temp_value and temp_value/1e3 or temp_fl
+        helpers.async_with_shell(
+            "sensors 2>/dev/null | rg -s -n AUXTIN0 | awk '{print $2}' | cut -c2- | head -c 2",
+            function(f)
+                temp_now = {}
+                local temp_fl, temp_value
+                for t in f:gmatch("[^\n]+") do
+                    temp_fl = t
+                    if temp_fl then
+                        temp_value = temp_fl
+                        coretemp_now = temp_value
+                    else
+                        coretemp_now = "N/A"
+                    end
                 end
+                widget = temp.widget
+                settings()
             end
-            if temp_now[tempfile] then
-                coretemp_now = string.format(format, temp_now[tempfile])
-            else
-                coretemp_now = "N/A"
-            end
-            widget = temp.widget
-            settings()
-        end)
+        )
     end
 
     helpers.newtimer("thermal", timeout, temp.update)

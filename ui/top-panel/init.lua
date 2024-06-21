@@ -77,6 +77,7 @@ local TopPanel = function(s)
         spr,
         battery,
         spr,
+        cpu_coretemp,
         cpu,
         awm_widgets.cpu_widget {
           width = 70,
