@@ -14,13 +14,20 @@ local wibox = require("wibox")
 local function factory(args)
     args = args or {}
 
+    local handle = io.popen("echo $HOSTNAME", "r")
+    local result = handle:read("*l")
+    handle:close()
+
+    local temp_resource = "AUXTIN0"
+    if result == "archpad" then temp_resource = "CPU" end
+
     local temp = { widget = args.widget or wibox.widget.textbox() }
     local timeout = args.timeout or 30
     local settings = args.settings or function() end
 
     function temp.update()
         helpers.async_with_shell(
-            "sensors 2>/dev/null | rg -s -n AUXTIN0 | awk '{print $2}' | cut -c2- | head -c 2",
+            "sensors 2>/dev/null | rg -s -n " .. temp_resource .. " | awk '{print $2}' | cut -c2- | head -c 2",
             function(f)
                 temp_now = {}
                 local temp_fl, temp_value
