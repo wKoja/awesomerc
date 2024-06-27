@@ -88,6 +88,7 @@ apps = {
 apps.editor_cmd = apps.terminal .. " -e " .. apps.editor
 apps.explorer_cmd = apps.terminal .. " -e " .. apps.explorer
 apps.btop_cmd = apps.terminal .. " -e " .. apps.btop
+apps.music_player_cmd = apps.terminal .. " -e " .. apps.music_player
 apps.scratchpad = scratchpads.term_scratch
 apps.calculator_scratch = scratchpads.calc_scratch
 menubar.utils.terminal = apps.terminal -- Set the terminal for applications that require it
