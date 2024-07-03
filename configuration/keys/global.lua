@@ -123,6 +123,8 @@ globalKeys = gears.table.join(
   -- screen recording and screenshots
   awful.key({       "Shift"     }, "XF86AudioMute", function() awful.spawn(apps.screenshot) end,
     {description = "take screenshot", group = "launcher"}),
+  awful.key({       "Shift"     }, "Print", function() awful.spawn(apps.screenshot) end,
+    {description = "take screenshot", group = "launcher"}),
   awful.key({modkey,   "Shift"  }, "XF86AudioMute", function() awful.spawn(apps.record_screen) end,
     {description = "record screen", group = "launcher"}),
   awful.key({modkey,   "Shift"  }, "Delete", function() awful.spawn(apps.stop_record_screen) end,
