@@ -92,6 +92,8 @@ globalKeys = gears.table.join(
     {description = "open browser", group = "launcher"}),
   awful.key({modkey,            }, "w", function() awful.spawn(apps.browser) end,
     {description = "open browser", group = "launcher"}),
+  awful.key({modkey,   "Shift"  }, "w", function() awful.spawn(apps.network_manager_cmd) end,
+    {description = "open browser", group = "launcher"}),
   awful.key({modkey,  "Shift"   }, "h", function() apps.change_lang() end,
     {description = "change language", group = "launcher"}),
   awful.key({modkey,  "Shift"   }, "d", function() awful.spawn(apps.password_manager) end,

@@ -78,6 +78,7 @@ apps = {
 	record_screen = "dmenurecord",
 	stop_record_screen = "dmenurecord kill",
 	screenshot = "maimpick",
+	network_manager = "nmtui",
 	mute_audio = "pamixer -t",
 	volume_up = "pamixer --allow-boost -i 5",
 	volume_down = "pamixer --allow-boost -d 5",
@@ -87,6 +88,7 @@ apps = {
 
 apps.editor_cmd = apps.terminal .. " -e " .. apps.editor
 apps.explorer_cmd = apps.terminal .. " -e " .. apps.explorer
+apps.network_manager_cmd = apps.terminal .. " -e " .. apps.network_manager
 apps.btop_cmd = apps.terminal .. " -e " .. apps.btop
 apps.music_player_cmd = apps.terminal .. " -e " .. apps.music_player
 apps.scratchpad = scratchpads.term_scratch
