@@ -66,7 +66,7 @@ apps = {
 	-- Your default file explorer
 	explorer = "lfub",
 
-	browser = "brave",
+	browser = "brave --password-store=basic",
 	sysact = "sysact",
 	btop = "btop",
 	change_lang = change_language,
