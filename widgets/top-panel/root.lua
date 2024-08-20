@@ -9,12 +9,13 @@ fsroothome = lain.widget.fs {
             markup.fontfg(
                 beautiful.font,
                 beautiful.red,
-                "root: "
+                " root: "
                 .. math.floor(fs_now["/"].used)
                 .. fs_now["/"].units
                 .. "/"
                 .. math.floor(fs_now["/"].size)
                 .. fs_now["/"].units
+                .. " "
             )
         )
     end,

@@ -10,14 +10,14 @@ mem = lain.widget.mem {
       markup.fontfg(
         beautiful.font,
         beautiful.green,
-        "RAM "
+        " RAM "
         .. mem_now.perc
         .. "%"
         .. " "
         .. math.floor(mem_now.used / 1000)
         .. "GB/"
         .. math.floor(mem_now.total / 1000)
-        .. "GB"
+        .. "GB "
       )
     )
   end,
