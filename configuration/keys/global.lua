@@ -102,6 +102,8 @@ globalKeys = gears.table.join(
     {description = "password manager", group = "launcher"}),
   awful.key({modkey,            }, "'", function () awful.spawn(apps.calculator_scratch:toggle()) end,
     {description = "calculator", group = "launcher"}),
+  awful.key({modkey,            }, "`", function () awful.spawn(apps.emojipicker) end,
+    {description = "emoji picker", group = "launcher"}),
   awful.key({modkey,            }, "F9", function() awful.spawn(apps.mounter) end,
     {description = "mounter", group = "launcher"}),
   awful.key({modkey,            }, "F10", function() awful.spawn(apps.unmounter) end,
