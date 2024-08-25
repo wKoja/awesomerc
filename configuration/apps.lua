@@ -77,6 +77,7 @@ apps = {
 	unmounter = "unmounter",
 	record_screen = "dmenurecord",
 	emojipicker = "dmenuunicode",
+	dmenu = "dmenu_run -i",
 	stop_record_screen = "dmenurecord kill",
 	screenshot = "maimpick",
 	network_manager = "nmtui",
