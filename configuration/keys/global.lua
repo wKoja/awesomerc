@@ -1,14 +1,10 @@
 local awful = require('awful')
 local gears = require("gears")
-local menubar = require("menubar")
-local naughty = require('naughty')
 
 require('awful.autofocus')
-local beautiful = require('beautiful')
 local hotkeys_popup = require('awful.hotkeys_popup').widget
 
 local modkey = require('configuration.keys.mod').modKey
-local altkey = require('configuration.keys.mod').altKey
 local apps = require('configuration.apps')
 
 -- {{{ Key bindings
@@ -97,7 +93,9 @@ globalKeys = gears.table.join(
   awful.key({modkey,  "Shift"   }, "h", function() apps.change_lang() end,
     {description = "change language", group = "launcher"}),
   awful.key({modkey,  "Shift"   }, "d", function() awful.spawn(apps.password_manager) end,
-    {description = "password manager", group = "launcher"}),
+    {description = "change language", group = "launcher"}),
+  awful.key({modkey             }, "b", function() apps.toggle_bar_visibility() end,
+    {description = "toggle top bar visibility", group = "launcher"}),
   awful.key({modkey,  "Shift"   }, "Return", function() awful.spawn(apps.scratchpad:toggle()) end,
     {description = "password manager", group = "launcher"}),
   awful.key({modkey,            }, "'", function () awful.spawn(apps.calculator_scratch:toggle()) end,
@@ -134,9 +132,9 @@ globalKeys = gears.table.join(
   awful.key({modkey,   "Shift"  }, "Delete", function() awful.spawn(apps.stop_record_screen) end,
     {description = "stop record screen", group = "launcher"}),
   -- brightness control
-  awful.key({modkey,   "Shift"  }, "=", function() awful.spawn(apps.brightness_up("+30")) end,
+  awful.key({modkey,   "Shift"  }, "=", function() apps.brightness_up("+30") end,
     {description = "brightness up", group = "launcher"}),
-  awful.key({modkey,   "Shift"  }, "-", function() awful.spawn(apps.brightness_down("-30")) end,
+  awful.key({modkey,   "Shift"  }, "-", function() apps.brightness_down("-30") end,
     {description = "brightness down", group = "launcher"}),
   awful.key({}, "XF86MonBrightnessUp", function() awful.spawn("xbacklight -inc 15") end,
     {description = "brightness up", group = "launcher"}),

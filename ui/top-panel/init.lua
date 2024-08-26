@@ -1,18 +1,12 @@
-local awful = require "awful"
 local beautiful = require "beautiful"
 local wibox = require "wibox"
-local gears = require "gears"
-local lain = require "lain"
 
-configuration = require "configuration.config"
+local configuration = require "configuration.config"
 require "widgets.top-panel"
 
 -- Separators
-local separators = lain.util.separators
 local spr = wibox.widget.textbox " "
 local arrow_color = beautiful.grey
-local arrl_dl = separators.arrow_left(arrow_color, "alpha")
-local arrl_ld = separators.arrow_left("alpha", arrow_color)
 
 local apply_background = function(w) return wibox.container.background(w, arrow_color) end
 
