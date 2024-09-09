@@ -1,0 +1,4 @@
+std = "awesome"
+
+[rules]
+global_usage = "allow"
