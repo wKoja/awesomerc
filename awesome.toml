@@ -10,3 +10,9 @@ any = true
 
 [client]
 any = true
+
+[volume_now]
+any = true
+
+[widget]
+any = true
