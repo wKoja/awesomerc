@@ -98,7 +98,7 @@ globalKeys = gears.table.join(
     {description = "toggle top bar visibility", group = "launcher"}),
   awful.key({modkey,  "Shift"   }, "Return", function() awful.spawn(apps.scratchpad:toggle()) end,
     {description = "password manager", group = "launcher"}),
-  awful.key({modkey,            }, "'", function () awful.spawn(apps.calculator_scratch:toggle()) end,
+  awful.key({modkey,            }, "'", function () awful.spawn(apps.calculator) end,
     {description = "calculator", group = "launcher"}),
   awful.key({modkey,            }, "`", function () awful.spawn(apps.emojipicker) end,
     {description = "emoji picker", group = "launcher"}),
@@ -116,11 +116,11 @@ globalKeys = gears.table.join(
   -- player controls
   awful.key({modkey            }, "m", function() awful.spawn(apps.music_player_cmd) end,
     {description = "open music player", group = "launcher"}),
-  awful.key({modkey,    "Shift"}, "F7", function() awful.spawn("mpc prev") end,
+  awful.key({modkey,    "Shift"}, "F7", function() awful.spawn("strawberry --previous") end,
     {description = "music previous", group = "launcher"}),
-  awful.key({modkey,    "Shift"}, "F8", function() awful.spawn("mpc toggle") end,
+  awful.key({modkey,    "Shift"}, "F8", function() awful.spawn("strawberry --play-pause") end,
     {description = "music pause/unpause", group = "launcher"}),
-  awful.key({modkey,    "Shift"}, "F9", function() awful.spawn("mpc next") end,
+  awful.key({modkey,    "Shift"}, "F9", function() awful.spawn("strawberry --next") end,
     {description = "music next", group = "launcher"}),
   -- screen recording and screenshots
   awful.key({       "Shift"     }, "XF86AudioMute", function() awful.spawn(apps.screenshot) end,
@@ -191,7 +191,7 @@ globalKeys = gears.table.join(
     end,
     {description = "lua execute prompt", group = "awesome"}),
   -- Menubar
-  awful.key({ modkey }, "d", function() awful.spawn(apps.dmenu) end,
+  awful.key({ modkey }, "d", function() awful.spawn(apps.launcher) end,
     {description = "show the menubar", group = "launcher"})
 )
 

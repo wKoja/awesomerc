@@ -17,7 +17,7 @@ local term_scratch = bling.module.scratchpad({
   command = "st -n spterm",                                    -- How to spawn the scratchpad
   rule = { instance = "spterm" },                              -- The rule that the scratchpad will be searched by
   sticky = true,                                               -- Whether the scratchpad should be sticky
-  autoclose = true,                                            -- Whether it should hide itself when losing focus
+  autoclose = false,                                            -- Whether it should hide itself when losing focus
   floating = true,                                             -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
   geometry = get_geometry_by_host(), -- The geometry in a floating state
   reapply = true,                                              -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)
@@ -28,7 +28,7 @@ local calc_scratch = bling.module.scratchpad({
   command = "st -n spcalc -f monospace:size=16 -e bc -lq",    -- How to spawn the scratchpad
   rule = { instance = "spcalc" },                             -- The rule that the scratchpad will be searched by
   sticky = true,                                              -- Whether the scratchpad should be sticky
-  autoclose = true,                                           -- Whether it should hide itself when losing focus
+  autoclose = false,                                           -- Whether it should hide itself when losing focus
   floating = true,                                            -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
   geometry = get_geometry_by_host(), -- The geometry in a floating state
   reapply = true,                                             -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)

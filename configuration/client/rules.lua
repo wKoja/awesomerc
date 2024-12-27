@@ -78,5 +78,9 @@ awful.rules.rules = {
     rule = { class = "thunderbird" },
     properties = { screen = 1, tag = "8" },
   },
+  {
+    rule = { class = "steam" },
+    properties = { screen = 1, tag = "6" },
+  },
 }
 -- }}}
