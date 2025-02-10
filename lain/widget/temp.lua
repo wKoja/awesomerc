@@ -18,7 +18,7 @@ local function factory(args)
     local result = handle:read("*l")
     handle:close()
 
-    local temp_resource = "AUXTIN0"
+    local temp_resource = "Tdie"
     if result == "archpad" then temp_resource = "CPU" end
 
     local temp = { widget = args.widget or wibox.widget.textbox() }
