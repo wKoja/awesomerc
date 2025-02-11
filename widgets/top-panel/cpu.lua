@@ -11,6 +11,7 @@ cpu = lain.widget.cpu {
 }
 
 cpu_coretemp = lain.widget.temp({
+	timeout = 0.1,
 	settings = function ()
 		widget:set_markup(markup.fontfg(beautiful.font, beautiful.yellow, " " .. coretemp_now .. "°C "))
 	end
