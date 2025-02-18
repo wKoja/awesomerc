@@ -10,6 +10,15 @@ return {
     --'blueberry-tray', -- Bluetooth tray icon
     --'xfce4-power-manager', -- Power manager
     'redshift',
+    'mpd',
+    'xcompmgr',
+    'dunst',
+    'unclutter',
+    'pipewire',
+    'remaps',
+    -- 'corectrl',
+    -- 'zenmonitor',
+    -- 'thunderbird',
     'setbg', -- sets background
     'numlockx on', -- enable numlock
     -- '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager (alternate directory if the first one is incorrect)
