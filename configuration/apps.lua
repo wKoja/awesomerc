@@ -80,7 +80,7 @@ apps = {
   -- Your default file explorer
   explorer = "lfub",
 
-  browser = "brave --password-store=basic --disable-gpu",
+  browser = "brave --password-store=basic",
   sysact = "sysact",
   btop = "btop",
   change_lang = change_language,

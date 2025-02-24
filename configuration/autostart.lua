@@ -16,6 +16,7 @@ return {
     'unclutter',
     'pipewire',
     'remaps',
+    '/home/koja/.local/src/lean-conky-config/start-lcc.sh',
     -- 'corectrl',
     -- 'zenmonitor',
     -- 'thunderbird',

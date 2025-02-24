@@ -1,12 +1,9 @@
 local bling = require("bling")
+local helpers = require("configuration.helpers")
 
 local get_geometry_by_host = function()
 
-  local handle = io.popen("echo $HOSTNAME", "r")
-  local result = handle:read("*l")
-  handle:close()
-
-  if result == "archpad" then
+  if helpers.is_thinkpad_hostname() then
     return {x = 220, y = 180, height = 450, width = 1000}
   else
     return {x = 500, y = 180, height = 750, width = 1000}

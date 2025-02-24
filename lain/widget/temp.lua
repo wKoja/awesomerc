@@ -7,6 +7,7 @@
 
 local helpers = require("lain.helpers")
 local wibox = require("wibox")
+local custom_helpers = require("configuration.helpers")
 
 -- {thermal,core} temperature info
 -- lain.widget.temp
@@ -14,12 +15,8 @@ local wibox = require("wibox")
 local function factory(args)
     args = args or {}
 
-    local handle = io.popen("echo $HOSTNAME", "r")
-    local result = handle:read("*l")
-    handle:close()
-
     local temp_resource = "Tdie"
-    if result == "archpad" then temp_resource = "CPU" end
+    if custom_helpers.is_thinkpad_hostname() then temp_resource = "CPU" end
 
     local temp = { widget = args.widget or wibox.widget.textbox() }
     local timeout = args.timeout or 30

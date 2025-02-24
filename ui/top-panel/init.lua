@@ -1,5 +1,6 @@
 local beautiful = require("beautiful")
 local wibox = require("wibox")
+local helpers = require("configuration.helpers")
 
 local configuration = require("configuration.config")
 require("widgets.top-panel")
@@ -48,15 +49,8 @@ local TopPanel = function(s)
       },
     })
   else
-    panel:setup({
-      layout = wibox.layout.align.horizontal,
-      { -- Left widgets
-        layout = wibox.layout.fixed.horizontal,
-        s.mytaglist,
-        s.mypromptbox,
-      },
-      s.mytasklist, -- Middle widget
-      { -- Right widgets
+    if helpers.is_thinkpad_hostname() then
+      _RIGHT_WIDGETS = {
         layout = wibox.layout.fixed.horizontal,
         apply_background(mykeyboardlayout),
         musicplayer,
@@ -76,7 +70,29 @@ local TopPanel = function(s)
         mytextclock,
         spr,
         s.mylayoutbox,
+      }
+    else
+      _RIGHT_WIDGETS = {
+        layout = wibox.layout.fixed.horizontal,
+        apply_background(mykeyboardlayout),
+        musicplayer,
+        volume,
+        wibox.widget.systray(),
+        mytextclock,
+        spr,
+        s.mylayoutbox,
+      }
+    end
+
+    panel:setup({
+      layout = wibox.layout.align.horizontal,
+      { -- Left widgets
+        layout = wibox.layout.fixed.horizontal,
+        s.mytaglist,
+        s.mypromptbox,
       },
+      s.mytasklist, -- Middle widget
+      _RIGHT_WIDGETS,
     })
   end
 
