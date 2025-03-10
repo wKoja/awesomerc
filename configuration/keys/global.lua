@@ -116,11 +116,11 @@ globalKeys = gears.table.join(
   -- player controls
   awful.key({modkey            }, "m", function() awful.spawn(apps.music_player_cmd) end,
     {description = "open music player", group = "launcher"}),
-  awful.key({modkey,    "Shift"}, "F7", function() awful.spawn("strawberry --previous") end,
+  awful.key({modkey,    "Shift"}, "F7", function() awful.spawn(apps.music_player_previous_cmd) end,
     {description = "music previous", group = "launcher"}),
-  awful.key({modkey,    "Shift"}, "F8", function() awful.spawn("strawberry --play-pause") end,
+  awful.key({modkey,    "Shift"}, "F8", function() awful.spawn(apps.music_player_toggle_cmd) end,
     {description = "music pause/unpause", group = "launcher"}),
-  awful.key({modkey,    "Shift"}, "F9", function() awful.spawn("strawberry --next") end,
+  awful.key({modkey,    "Shift"}, "F9", function() awful.spawn(apps.music_player_next_cmd) end,
     {description = "music next", group = "launcher"}),
   -- screen recording and screenshots
   awful.key({       "Shift"     }, "XF86AudioMute", function() awful.spawn(apps.screenshot) end,
@@ -150,6 +150,10 @@ globalKeys = gears.table.join(
     {description = "reload awesome", group = "awesome"}),
   awful.key({ modkey, "Shift"   }, "e", awesome.quit,
     {description = "quit awesome", group = "awesome"}),
+
+  -- torrenting
+  awful.key({ modkey, "Shift" }, "t", function() awful.spawn(apps.torrent_client_cmd) end,
+    {description = "open torrenter", group = "launcher"}),
 
   awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
     {description = "increase master width factor", group = "layout"}),
