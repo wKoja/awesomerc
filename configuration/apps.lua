@@ -70,7 +70,7 @@ end
 apps = {
 
   -- Your default terminal
-  terminal = "st",
+  terminal = "wezterm",
 
   -- Your default text editor
   editor = os.getenv("EDITOR") or "vim",
