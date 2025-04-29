@@ -9,14 +9,13 @@ return {
     'nm-applet --indicator', -- wifi
     --'blueberry-tray', -- Bluetooth tray icon
     --'xfce4-power-manager', -- Power manager
-    'redshift',
+    'python3 /usr/bin/redshift-gtk',
     'mpd',
     'xcompmgr',
     'dunst',
     'unclutter',
     'pipewire',
     'remaps',
-    '/home/koja/.local/src/lean-conky-config/start-lcc.sh',
     -- 'corectrl',
     -- 'zenmonitor',
     -- 'thunderbird',
