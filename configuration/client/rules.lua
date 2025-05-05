@@ -70,20 +70,8 @@ awful.rules.rules = {
   },
 
   {
-    rule = { class = "Slack" },
-    properties = { screen = 1, tag = "3" },
-  },
-  {
-    rule = { class = "CoreCtrl" },
-    properties = { screen = 1, tag = "4" },
-  },
-  {
     rule = { class = "thunderbird" },
     properties = { screen = 1, tag = "8" },
-  },
-  {
-    rule = { class = "steam" },
-    properties = { screen = 1, tag = "6" },
   },
 }
 -- }}}
